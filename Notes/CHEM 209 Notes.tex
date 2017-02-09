@@ -1,0 +1,992 @@
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%% LATEX SAMPLE FILE %%%%%%%%%%%%%%%%
+% A line which starts with a % sign
+% is called a COMMENT. It is IGNORED
+% by the LaTeX processor.
+
+% Include math
+\usepackage{amsmath,amsthm,amssymb}
+% Include links
+\usepackage{hyperref}
+
+
+%%%%%%%%%%%%%  THEOREMS  %%%%%%%%%%%%%%%%%
+% Let's define some theorem environments
+% To use later in the paper
+\theoremstyle{plain} % other options: definition, remark
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+% By including [theorem], the lemma follows the numbering of theorem
+% e.g. Thm 1, Lemma 2, Thm 3, Thm 4, \dots
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition} % the star prevents numbering
+
+\theoremstyle{example}
+\newtheorem*{example}{Example}
+% Remarks
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+
+
+
+%%%%%%%%%%%%%%  PAGE SETUP %%%%%%%%%%%%%%%%%
+% LaTeX has big default margins
+% The following sets them to 1in
+\usepackage[margin=1.5in]{geometry}
+
+% The following sets up some headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{General Chemistry for Engineers} % Left Header
+\rhead{\thepage} % Right Header
+\cfoot{} % Center Foot (empty)
+
+
+
+
+
+
+%%%%%%%%%%%%% SHORTCUTS %%%%%%%%%%%%%%%%%%%%
+% You can define your own shortcuts too.
+% Examples of custom commands
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\cbrt}[1]{\sqrt[3]{#1}}
+
+\begin{document}
+
+% Set up a title
+\title{CHEM 209}
+\author{David Ng}
+\date{Fall 2016}
+\maketitle
+
+% This line makes a ToC
+\tableofcontents
+
+% This line starts a new page
+\eject
+
+%%%%%%%%%%%%% January 11 %%%%%%%%%%%%%%%%%%%%
+
+\section{September 13, 2016}
+
+\subsection{Introduction}                 
+
+In this course, we are concerned with how far reactions go, how fast reactions are, and what a bond is. 
+
+\subsection{In Class Demonstration 1}
+
+Observations:
+
+\begin{itemize}
+	\item Three filled balloons (lighter than air) are placed next to each other and held down by their respective weights.
+	\item Two of the balloons are raised at a heigh
+\end{itemize}
+
+A needle is used to pop the first tall balloon. No input of energy, balloon just popped. (ie atmosphere).  The second tall balloon exploded in flames when an energy source was used to start the reaction below. The third balloon placed closer to the ground exploded in flames with a greater intensity in flames and sound. The second balloon was filled with $H_2$ and $O_2$. Thus, the reaction was quicker since Hydrogen and Oxygen were already present within the balloon. This is in contrast to the second balloon, which required Oxygen from outside the balloon to react with the Hydrogen within. Second explosion was brighter and possessed a lighter hue. This reaction is of interest, as it is what occurs in a Hydrogen fuel cell. 
+
+The reaction was $$2H_{2(g)}+O_{2(g)} + \text{Energy} \rightarrow_{(\Delta )} 2H_2O_{(g)}$$
+
+
+
+\section{September 15, 2016}
+\subsection{Rate of Reactions}
+
+Chemical reactions occur at certain speeds. The speed of this reaction is measured by looking at concentration changes over time. It also depends on a reaction's mechanism. The rate of a reaction can be altered by changing temperature or through the use of a catalyst. 
+
+In order for a reaction to occur, the molecules involved must collide. The collisions must occur with enough energy, as well as with correct orientation of the molecules. Change in the concentration of the substance, adjustments to the pressure of the substance/system, the use of a catalyst, and the adjustment of temperature to affect kinetic energy, all affect the rate of a reaction. An effective collision results in a reaction. 
+
+\begin{remark}
+A collision is more likely to result in the desired products if the reactants collide head on in a direct, connected fashion. 
+\end{remark}
+
+ \textbf{Rate} is equal to the change in concentration over time. In a reaction, reactants disappear, while products begin to appear. 
+
+\begin{example}
+Describe the rate of the following reaction $$2NO_{2(g)} \rightarrow N_2O_{4(g)}$$
+\end{example}
+
+In the above reaction, we see $-\frac{\Delta [NO_2]}{\Delta t}$ as the change in the reactants, whereas $+\frac{\Delta [N_2O_4]}{\Delta t}$ is the change in the products. We note that in the graph of concentration to time, we see a state of equilibrium after a certain amount of time. 
+
+\begin{remark}
+Note that at equilibrium, we do not see a change, but it may be that the reaction is still in progress. At equilibrium, the forward and reverse reaction cancel each other out. The concentration change is constant at equilibriuim. 
+\end{remark}
+
+\begin{remark}
+For the reaction $2NO_{2(g)} \rightarrow 2NO_{(g)} + O_{2(g)}$, we note that many plots can be obtained. From the stoichiometry, we only require that $NO_2$ and $NO$ change at the same rate, whereas $O_2$ changes at half the rate. 
+\end{remark}
+
+The \textbf{instantaneous rate of reaction} refers to the slope of the reaction at a certain time, whereas the \textbf{average rate of reaction} refers to taking the change in concentration over the specified time interval. That is, the instantaneous rate is obtained from $$-\frac{\mathrm d[H_2O_2]}{\mathrm d t}$$ and the average rate is obtained from $$-\frac{\Delta[H_2O_2]}{\Delta t}$$
+
+\begin{remark}
+A change is absolute quantitatively. Thus, when talking about rates, we consider the absolute value of the rate of change. 
+\end{remark}
+
+
+
+
+
+\section{September 19, 2016}
+\subsection{Rates}
+
+\begin{example}
+Relate reactant concentration to instantaneous reaction rates using rate laws for the following reaction
+
+$$2NO_{2(g)} \rightarrow N_2O_{4(g)}$$
+\end{example}
+
+By applying the rate laws, we get
+
+$$Rate = -\frac{\Delta [NO_2]}{\Delta t} = k[NO_2]^x$$
+
+Since we are only concerned about reactants, we note that the differential rate law relates the change in concentration of reactants to a rate constant, $k$ (which depends on elements of collision theory), and the amount of reactants with respect to an order, $x$. Thus, we note that $k$ and $x$ must be experimentally determined. 
+
+\subsection{Arrhenius Equation}
+
+The Arrhenius equation is given as
+$$k = Ae^{-\frac{E_a}{RT}}$$
+
+where $A$ is the pre-exponential factor, $E_a$ is the activation energy, and $RT$ refers to the average kinetic energy. That is, $R$ is the ideal gas constant and $T$ is the temperature in Kelvin. 
+
+Units of $k$ can give one an idea of the order. Let us consider the following equation
+
+$$rate = k[NO_2]^{x=0}$$
+
+For zero order, $x=0$ reduces the equation to $rate = k$. Thus, the units of $k$ are
+
+$$\frac{mol}{L*s}$$
+
+
+For first order, the units of $k$ are
+
+$$1/s$$
+
+For second order, the units of $k$ are 
+
+$$\frac{L}{mol*s}$$
+
+
+\begin{remark}Orders allow us to realize what will happen to the rate when we start changing the concentrations. For a zero order plot of rate, a change in concentration would not result in a change in the rate. The rate would be constant since we do not have a concentration dependence in that type of relation. 
+\end{remark}
+
+
+\begin{example}
+What would be the generic form of the rate law for the following reaction?
+
+$$2NO_{(g)} + O_{2(g)} \rightarrow 2NO_{2(g)}$$
+\end{example}
+
+We note that it would be of the form $$Rate = k[NO]^x[O_2]^y$$ where we would have to experimentally determine $k, x$, and $y$. 
+
+\subsection{Change in Rate}
+
+\begin{remark}
+For a first order equation, if we double concentration, the rate doubles. That is, the rate change is linear. For a second order equation, if we double concentration, the rate quadruples. That is, the rate change is quadratic. 
+\end{remark}
+
+\begin{remark}``The rate of zero-order reactions have no dependence on the concentration of reactants." This is False because if we do not have the reactant, we would not have a reaction for which to determine a rate. 
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+\begin{example}
+Given experimental data, quantitatively determine the components of a rate law ($k$ and order) using the method of initial rates. 
+\end{example}
+
+If we note a quadrupling of the initial rate, then it would be of second-order. 
+
+
+\section{September 22, 2016}
+
+\subsection{Change in Rates Cont'd}
+
+The \textbf{rate constant} relates rate to the elements of collision theory. It is calculated once the order is known. The following the steps required to calculate $k$.
+
+\begin{enumerate}
+\item First find the generic rate law for the equation.
+\item We would like to compare experiments ideally so that a ratio of rates gives a large number. \item Knowing any orders, we calculate $k$ using any other experiments. 
+\end{enumerate}
+
+\begin{remark}
+We note that between experiments, we have to conduct the experiments in the same conditions. That is, external variables such as temperature, pressure, catalysts, etc. 
+\end{remark}
+
+Using the method of initial rates, we can apply these principles to experiments with multiple reactants. That is, we first determine the generic rate law of the form 
+
+$$Rate = k[Substance_1]^a[Substance_2]^b$$
+
+Then we choose two experiments, placing the experiment with the greater initial rate on top. This is equated with the respective concentrations expressed as a fraction. We may have to repeat this process until all orders are determined. After all orders are determined, we may solve for $k$. The final order of a reaction with multiple reactants is the sum of the orders of each reactant. 
+
+\begin{remark}
+We note that catalysts are present at the beginning and at the end of a reaction. In an equation, it is presented over the arrow. Thus, it must be considered when comparing rates, as it is present as a reactant. 
+\end{remark}
+
+\begin{remark}
+The order of the reaction is encompassed in the units of the value $k$. 
+\end{remark}
+
+\subsection{Integrated Rate Laws}
+
+The following is the \textbf{first order differential rate law}
+
+$$-\frac{\mathrm d [A]}{\mathrm d t} = k_1[A]^1$$
+Rearranging this equation, we get 
+$$-\frac{\mathrm d [A]}{[A]} = k_1\mathrm d t$$
+Note that the negative signs indicates that the concentration is decreasing. We now integrate both sides 
+
+$$\int_{[A]_0}^{[A]t}-\frac{\mathrm d [A]}{[A]} = k\int_0^t\mathrm d t$$ to get the \textbf{first order integrated rate law}
+
+$$\ln\left([A]_t \right)= -k_1t+\ln\left([A]_0\right)$$
+The mathematical integration of the differential rate law becomes the first order integrated rate law. 
+
+
+
+
+\section{September 27, 2016}
+\subsection{Differential and Integrated Rate Laws}
+
+Differential rate law of 0 and 2 order.
+$$\frac{-\mathrm d [A]}{\mathrm d t} = k_0$$
+
+
+$$\frac{-\mathrm d [A]}{\mathrm d t} = k_2[A]^2$$
+Integrated rate laws of 0 and 2 order.
+$$[A]_t = -k_0t + [A]_0$$
+$$\frac{1}{[A]_t}=k_2t+\frac{1}{[A]_0}$$
+
+
+\begin{remark}
+For pseudo-differential and pseudo-integrated rate laws, the reaction would have a pseudo-constant, with $k$ contained inside.
+\end{remark}
+
+\begin{example}
+Use integrated rate laws to determine the amount of product produced (or reactant remaining) at any given point within a reaction or the half life of a reaction. The conversion of cyclobutane to ethene at $449$ degrees celsius has $k=0.02277 min^{-1} $.
+
+$$C_4H_{8(g)} \rightarrow 2C_2H_{4(g)}$$
+
+What is the generic rate law? What is the order of cyclobutane? What is the concentration of cyclobutane after 20 minutes if $0.400$ mols is placed in a $1.00$ L container at $449$ degrees Celsius. 
+
+\end{example}
+
+We determine that the generic rate law is given as 
+
+$$ Rate = k[C_4H_8]^x$$
+
+The order of cyclobutane can be determined from the units hidden within the $k$ value. Thus, we note that the reaction is therefore a first order reaction. 
+
+For the first question, since we need the concentration after 20 minutes, we need the integrated rate law of first order. 
+
+$$\ln\left([C_4H_8]_{20}\right) = -kt + \ln\left([C_4H_8]_0\right)$$
+By substituting known values, we get
+
+\begin{align*}
+\ln\left([C_4H_8]_{20}\right) &= \left(-0.02277min^{-1}\right)(20 min) + \ln\left(0.400 M\right)\\
+\ln\left([C_4H_8]_{20}\right) &=-1.37169073187\\
+[C_4H_8]_{20}&= 0.3M
+\end{align*}
+
+
+\begin{example}
+Using the previous information, determine how long it will take at $449^{\circ}\mathrm C$ for $65.0\%$ of the original cyclobutane sample to be consumed.
+\end{example}
+
+We note that the integrated rate law becomes
+
+\begin{align*}
+\ln\left(.350*0.400M\right) &= \left(-0.02277min^{-1}\right)t + \ln\left(0.400 M\right)\\
+ \left(-0.02277min^{-1}\right)t &= \ln\left(.350*0.400M\right)- \ln\left(0.400 M\right)\\
+ t &= \frac{\ln\left(.350*0.400M\right)- \ln\left(0.400 M\right)}{\left(-0.02277min^{-1}\right)}\\
+ t &= 46.1 mins
+\end{align*}
+
+\begin{remark}
+We note that for the integrated rate laws, $0$ and $1$ order have a negative slope, whereas $2$ order has a positive slope. $k$ is the slope, while the $y$-intercept is the constant term.
+\end{remark}
+
+
+\section{September 29, 2016}
+\subsection{Mechanisms}
+
+Reactions do not always occur as written. Consider for instance the following reaction:
+
+$$CH_3CHO \rightarrow CH_4+CO$$
+
+which occurs with the catalyst of $I_2$. The reaction actually occurs in two steps, which are
+
+\begin{enumerate}
+\item $$CH_3+I_2 \rightarrow CH_3I + HI + CO$$
+\item $$CH_3I + HI \rightarrow CH_4+I_2$$
+\end{enumerate}
+
+
+
+Each of the above steps cannot be broken down further. Thus, they are \text{elementary steps}. Thus, they each have their own rate and rate law. Furthermore, the order of their rate laws equal the stoichiometric coefficients. For Step 1 for instance, we have
+
+$$Rate_{1} = k_1[CH_3CHO]^1[I_2]^1$$
+
+Thus, the overall reaction does not occur faster than its slowest step. Therefore, the rate law of the slowest step is the rate law for the mechanism, which means that it describes the rate of the overall reaction.
+\begin{remark}
+We note that the catalyst is consumed, then regenerated, while the intermediate is formed, then consumed later in a reaction.
+\end{remark}
+
+\subsection{Reaction Energy}
+Consider the reaction energy diagram of the reaction
+
+$$H_2O_{2 (aq)}\rightarrow 2H_2O_{(l)}+ O_{2(g))}+Energy$$
+
+Potential energy is plotted on the $y$-axis, while the reaction coordinate (from start to end of the reaction) is plotted on the $x$-axis. To reach a transition state for a reaction to occur, enough \textbf{activation energy}, $E_a$, is required.
+
+Consider the following multi-step reaction
+
+\begin{enumerate}\item $$H_2O_2 + KI \rightarrow H_2O + KIO$$
+\item $$KIO + H_2O_2 \rightarrow O_2 + H_2O + KI$$
+\end{enumerate}
+
+
+We note that the reaction is simply the multi-step version of the one-step reaction above. Thus, the diagram would look similar to the original, with the exception that there would be two humps requiring a particular activation energy. Typically, the intermediate step would result in a greater potential energy than with the original reactants (the intermediate is unstable). Furthermore, since we know that the first reaction occurs faster, this means that $E_{a(1)} < E_{a(2)}$. Thus, we note that the overall $E_a = E_{a(1)} + E_{a(2)}$. 
+
+
+With increased temperature, there are more collisions occurring with enough energy to react. This does not change the activation energy. With the use of a catalyst, the activation energy may be lowered, since it changes the mechanism. 
+
+\subsection{In Class Demonstration 2}
+
+Observations:
+
+\begin{itemize}
+\item There are four test tubes, each filled with 30 ml of $H_2O_2$. 
+\item 10 ml of detergent is added to each to allow visualization to oxygen when bubbles formed. Two had potatoes added - one with slice up potato and the other with a cut potato. \item The one with more surface area reacted faster. 
+\item The one with $KI$ added reacted very quickly. 
+\item A circular beaker contained 10ml of $H_2O_2$ with potassium permanganate, which resulted in smoke and much oxygen formed. 
+\end{itemize}
+We see the decomposition of Hydrogen Peroxide to Water and Oxygen. The decomposition of peroxide has a very high $E_a$. It decomposes over a long period of time. For the second trial, a catalyst in the potato raises the energy of reactants and products, but it lowers the $E_a$. Note that an increase in surface area simply increases collisions. In the third case, $KI$ catalyst changes the mechanism which lowers the overall $E_a$ more. In the last trial, $MnO_2$ catalyst changes the mechanism and lowers the overall $E_a$ the most. 
+
+\begin{remark}
+We note that species with high energy are more unstable than those at a lower energy. Reactant that are more unstable than products means that the reaction is exothermic. The heat of reaction is therefore negative $-\Delta H_{rxn} $
+\end{remark}
+
+
+
+\section{October 4, 2016}
+\subsection{Factors on Reaction Speed}
+
+\begin{remark}
+The reaction speed can be modified using a catalyst, since we make the initial reactants more unstable. A catalyst always lowers the energy of activation of a reaction. It is not the case that a catalyst always changes the mechanism of a reaction. 
+\end{remark}
+
+\begin{definition}
+\textbf{Homogeneous catalysis} is one that is in the same phase as the reactants/products of a reaction. 
+\end{definition}
+
+
+\begin{example}
+For instance, in the isomerization of z-butane, a homogeneous catalyst can be used to bring the $E_a$ into several smaller steps. 
+\end{example}
+
+\begin{definition}
+\textbf{Heterogeneous catalysis} may or may not change the mechanism of the reaction. 
+\end{definition}
+
+\begin{example}
+This is like the reaction of $H_2O_2$ with the catalase in the potato. Another example would be the hydrogenation of ethylene. 
+\end{example}
+
+Temperature also has an effect on the rate of a reaction, but not on the activation energy. As we increase the temperature, we similarly increase the number of successful collisions. The $E_a$ is not altered by temperature. We recall that 
+
+$$k = Ae^{-\frac{E_{act}}{RT}}$$
+
+Taking the natural logarithm of both sides of the expression for $k$, we get the expression
+
+$$\ln(k) = -\frac{E_a}{R}\left(\frac{1}{T}\right)+ \ln(A)$$
+
+If the frequency factor $A$ is unknown, the rate constants determined at two temperatures (using the method of initial rates) can be used to determine $E_{act}$
+
+$$\ln(k_2) - \ln(k_1) = \ln\left(\frac{k_2}{k_1}\right) = -\frac{E_a}{R}\left(\frac{1}{T_2} - \frac{1}{T_1}\right)$$
+
+The above equation can be used to calculate the rate constant of a reaction at one temperature if the energy of activation and the rate constant at another temperature is known. We note that therefore, $A$ must be experimentally determined from the slope.  
+
+\subsection{Half-Life of Reaction}
+
+We may refer to the integrated rate laws to determine the amount of product produced (or reactants remaining) at any given point within a reaction or the half life of a reaction. We simply replace $[A_t]$ to $[A_0]/2$. The half-life equations are therefore
+
+\begin{remark}
+We note that a 1 order reaction has no concentration dependence in calculating the half-life of a reaction.  
+\end{remark}
+
+\begin{example}
+How long will it take for half of $0.086 M$ of $I$ to be consumed for the reaction shown if $k=7.0*10^9M^{-1}s^{-1}$. 
+
+$$2I_{(g)} \rightarrow I_{2(g)}$$
+\end{example}
+
+We note that from $k$, we know that the equation is 2 order. From there, we apply the integrated rate law of second order, and substitute $[A_t] = [A_0]/2$ to solve for $t$. Doing this, we find that the amount of time required is $t=1.7*10^{-9} s$. 
+
+\subsection{Extent of a Reaction}
+
+\begin{definition}
+A \textbf{dynamic equilibrium} means that a reaction has reached a point where there does not appear to be any change in concentration with time, but the reaction is still occurring in both the forward and reverse reactions at the same rate. We note that we indicate this with double headed arrows. 
+\end{definition}
+
+Consider the following equation 
+
+$$N_2O_{4(g)} \rightarrow 2NO_{2(g)}$$
+\begin{definition}
+The \textbf{reaction quotient}, denoted by $Q$, is the concentration of products over reactants raised to their stoichiometric coefficients.
+\end{definition}
+
+In the reaction above, we note 
+$$Q_c = \frac{[NO_2]^2}{[N_2O_4]}$$
+$$Q_p = \frac{P_{NO_2}^2}{P_{N_2O_4}}$$
+We note that $c$ denotes the concentration, whereas $p$ denotes the pressure. Additionally, $Q_c \neq Q_p$.
+
+
+\begin{definition}
+The \textbf{equilibrium constant}, denoted by $K$, is equal to 
+$$K = Q_{equilibrium}$$
+\end{definition}
+Analogously, we have
+$$K_c = \frac{[NO_2]^2}{[N_2O_4]}$$
+$$K_p = \frac{P_{NO_2}^2}{P_{N_2O_4}}$$
+
+\section{October 6, 2016}
+\subsection{Equilibria}
+
+When reactions reach dynamic equilibrium, the concentration no longer changes. Furthermore, the forward and reverse reactions occur at the same rate.
+
+\begin{example}
+$$ N_2O_{4(g)} \leftrightharpoons 2NO_{2(g)}$$
+\end{example}
+
+We recall that the $P$ on the bottom of $$K_p = \frac{P_{NO_2}^2}{P_{N_2O_4}}$$ is the partial pressure of the gas $N_2O_4$. The molecules colliding with the container exerts a force. This is a variation of the ideal gas law, since $$P_{N_2O_4} = \frac{n_{N_2O_4}RT}{V}$$ The sum of the partial pressures gives us the total pressure. The equation can be rearranged as follows
+
+\begin{align*}
+K_p &= \frac{P_{NO_2}^2}{P_{N_2O_4}}\\
+&= \frac{\left([NO_2]RT\right)^2}{[N_2O_4]RT}\\
+&= K_c(RT)^{\Delta n}
+\end{align*}
+
+\begin{example}
+Determine the direction in which a reaction will proceed using the values of $Q$ and $K$.
+\end{example}
+Both $Q$ and $K$ are of the form $$\frac{[product]^p}{[reactant]^r}$$
+In the case that $Q=K$, then the reactants and products are at equilibrium. We note in the case that $Q > K$, the reaction is occurring in reverse, whereas in the case that $Q < K$, the reaction proceeds in the forward direction.
+
+\begin{example}
+Given that $K_c = 4.63*10^{-3}$ at $25$ degrees Celsius, what is the $[NO_2]_E$ if $0.1 mol$ of $N_2O_4$ comes to equilibrium in a $5L$ flask at $25$ degrees Celsius for the following equation
+
+$$N_2O_{4(g)} \leftrightharpoons 2NO_{2(g)}$$
+\end{example}
+
+We apply the ICE table to note that we initially have $.02 M$ of $N_2O_4$ and $0M$ of $2NO_2$. Evaluating the ICE table, we get $4.27*10^{-3} M$.
+
+\section{October 11, 2016}
+\subsection{ICE Tables}
+
+\begin{example}
+	For the equation $$3A \leftrightharpoons 2B$$ the initial concentrations are $[A]_0$ and $[B]_0$, the change in concentration is $-3x$ and $+2x$ respectively, and the equilibrium concentrations are $[A]_E$ and $[B]_E$ respectively. We have $$K = \frac{[B]_E^2}{[A]_E^3} = \frac{([B]_0 + 2x)^2}{([A]_0-3x)^3}$$
+\end{example}
+
+\subsection{Changing Equilibria}
+
+
+
+\begin{definition}
+\textbf{Le Chatelier's Principle} states that, if the components of an equilibrium are disturbed, they will respond to re-establish $K$. 
+\end{definition}
+
+We can describe (quantitatively and qualitatively) the effect of changes in amount of a substance on equilibrium. Qualitatively, we would like to look at how $K$ changes to $Q$. We then examine if $Q<K$ the reaction is progressing in the forward direction, or if $Q > K$ the reaction is progressive in the reverse direction. We may obtain a new equilibrium position. Quantitatively, we may determine using ICE the new equilibrium concentration given the old equilibrium concentration plus the disturbance. We note that $K$ is constant.
+
+\begin{example}
+In the reaction for 
+$$PCl_5 \leftrightharpoons PCl_3 + Cl_2$$
+we have initial concentrations of $0.600, 0.200,$ and $0.120+0.060$ respectively, changes of $+x, -x,$ and $-x$ respectively, and equilibrium concentrations of $0.600 + x$, $0.200 -x$ and $0.180 -x$ respectively. Our expression becomes 
+$$K = \frac{(0.200-x)(0.180-x)}{0.600+x}$$
+\end{example}
+
+We note that the components respond to counteract any disturbance, such as volume or pressure. Qualitatively, we look at the number of moles and note that for a decrease in volume of an increase in pressure outside, the reaction proceeds towards the side with less $n$. We note that a change in pressure inside without an associated change in volume has no effect. Quantitatively, we once again use ICE and note that since we alter the volume but keep the number of moles constant, the initial concentrations change. $K$ is held constant.
+
+Unlike the previous changes where the components alter to re-establish $K$, this disturbance of changing temperature causes the components to change the value of $K$. Qualitatively, we must consider the head of a reaction. Consider that the reaction $$A \rightarrow B + heat$$ is an exothermic process, whereas $$A + heat \rightarrow C$$ is an endothermic process. We note that for the first exothermic case, the reaction proceeds in the reverse direction, while the second endothermic case causes the reaction to move forward. Quantitatively, we use the \textbf{Van't Hoff Equation} which states that
+$$\\ln\left(\frac{K_2}{K_1}\right) = \frac{-\Delta H}{R} \left(\frac{1}{T_2} - \frac{1}{T_1}\right)$$
+where $K_i$ are the equilibrium constants, $\Delta H$ in $kJ/mol$ is heat, $R$ is the ideal gas constant, and $T_i$ are the temperatures in Kelvin for $i = 1,2$.
+
+\begin{example}
+If initial equilibrium was established in a $1L$ flask with $0.500 mol/L$ butane and $1.25 mol/L$ isobutane, what are the concentrations when equilibrium is re-established after adding the $1.50$ moles of butane. 
+\end{example}
+
+$x = 15/14, 2 isobutane, .9 butane$
+\begin{example}
+If the initial volume was $1L$, determine what the equilibrium concentrations are when equilibrium concentrations when equilibrium is re-established after compression.
+\end{example}
+Stoichiometric refers to however many mols specified by coefficient. 
+\begin{example}
+If $K$ is $1300$ at $273 K$, determine what $K$ is at $298 K$ if $\Delta H = -57.1kJ/mol$.
+\end{example}
+$K=160$
+
+
+
+Changing the amount of chemical species reduces the concentrations or partial pressures must be replaces. This causes a shift to a new equilibrium position ($K$ does not change).
+Changing the volume (external pressure) means that a smaller volume or higher pressure favors a shift in equilibrium position ($K$ does not change). 
+
+
+
+
+
+
+
+18 multiple choice, 5 short answer.
+
+\section{October 13, 2016}
+\subsection{Acids and Bases}
+
+There are three primary classificiations of acids and bases. They are
+\begin{enumerate}
+\item \textbf{Arrhenius}: Any acid possesses $H^+$ and any base possesses $OH^-$.
+\item \textbf{Bronsted-Lowry}: Any acid is a $H^+$ (proton) donor and any base is a $H^+$ acceptor.
+\item \textbf{Lewis}: Any acid is an $e^-$ pair acceptor and any base is an $e^-$ pair donor. 
+\end{enumerate}
+In this course, we are primarily concerned with Bronsted-Lowry acids and bases.
+
+A \textbf{strong species} has a large $K$ value, and in water is considered to be $K = \infty$. In other words, the species ``reacts" $100\%$ The reactions are of the form $$HA + H_2O \rightarrow A^- + H_3O^+$$ The acids include $HCl, HBr, HI, HClO_4, H_2SO_4, HNO_3$ and the bases include Group $I$ and $II$ hydroxides and oxides such as $NaOH, Na_2O$. 
+
+A \textbf{weak species} has a $K$ value $< 1$. In water, it reacts $< 100\%$. When dealing with equilibria of weak acids and bases, we simply apply new terminology. For reactions involving bases
+$$B +H_2O \leftrightharpoons H^+B + OH^-$$We have $$K_b = \frac{[OH^-][BH^+]}{[B]}$$
+
+\begin{remark}
+We recall that $H_2O$ is not considered in ICE calculations. In the above reaction, $B$ is the weak base, while $H^+B$ is the conjugate acid. If there is around a 1000 factor difference between $K$ and concentration, then it is negligible.
+\end{remark}
+
+\begin{remark}
+$p = -\log$. Thus, $pH$ is for $[H^+]$, $pOH$ is for $[OH^-]$, $pK_a$ is for $K_a$ and $pK_b$ is for $K_b$
+\end{remark}
+
+$pK_a$ represents an absolute acidity scale, whereas $pH$ is a relative acidity scale based on water. 
+
+
+
+
+
+
+
+
+\section{October 18, 2016}
+\subsection{Acid Base Equilibrium}
+
+Acid and base solutions are equilibrium systems. We focus on $[H^+]$ and $[OH^-]$ to define the acidity of a solution. Reference is usually made to the auto-ionization of water. 
+Consider the following equation 
+$$2H_2O_{(l)} \leftrightharpoons OH^-_{(aq)} + H_3O^+_{(aq)}$$
+
+Using the ice table with the knowledge that $K_w = 1.0 * 10^{-14}$, we note that we initially have 0 mols of products. We get $+x$ of both products. Thus, the equation becomes $$K_w = x^2$$ Solving for $x$, we get the concentration of $[H^+]$ and $[OH^-]$. We can then find $pH$ from these values. 
+
+In the reaction of a strong species, we have 
+$$HA + H_2O \rightarrow H_3O^+ + A^-$$
+We note the conjugate acid base pairs. 
+
+
+\begin{remark}
+For strong acid, we assume what we put in is converted entirely to the product that we get out. We therefore get $pH = -\log([reactant]_{initial})$. Initial concentration has to be greater than the $K$ value by a factor of 1000 in order to ignore
+\end{remark}
+
+\begin{remark}
+Acids and Bases do not have to occur in solution. We can note a proton acceptor and proton donor. They are the bases and acids respectively. 
+\end{remark} 
+
+\begin{remark}
+We note that a greater extent of a reaction means more products, which is represented by a greater $K$ value. 
+\end{remark}
+
+\begin{remark}
+We note that we will calculate pressures or gas constants using $.08314 L*bar*mol^{-1}K^{-1}$. We note that $\Delta n$ comes from the mols of gas.
+\end{remark}
+
+\begin{remark}
+For significant digits, we refer to each step and carry the significance forward through each calculation.
+\end{remark}
+
+\begin{example}
+For the equation $$NH_{3(g)} + H_2O_{(l)} \leftrightharpoons NH_{4(aq)}^+ OH^-_{(aq)}$$
+If the initial concentration of $0.34$ $M $ $NH_3$ was introduced into a $1.0 $ $L$ flask at a $pH$ of $6.00$, what is the $pH$ once equilibrium is reached?
+\end{example}
+
+We first determine the initial concentration of the two unknown product gases from the initial $pH$. We then find the $pH$ once equilibrium is established.
+
+\section{October 20, 2016}
+\subsection{Auto-ionization of Water}
+
+We note that $K_a$ and $K_b$ respectively are determined from the following reactions
+
+$$HA + H_2O \leftrightharpoons H_3O^+ + A^-$$
+$$A- + H_2O \leftrightharpoons HA + OH^- $$
+Adding these two reactions together, we get the reaction for $K_w$, which is
+$$ 2H_2O \leftrightharpoons H_3O^+ + OH^-$$
+We therefore find that $K_a \cdot K_b = K_w$
+
+\begin{example}
+Let $HA = CH_3COOH$ and $A^- = CH_3COO^-$. Suppose we know that $K_a = 1.8*10^{-5}$. What would be $K_b$?
+\end{example}
+
+We use $K_w$ and $K_a$ to find that $K_b = 5.6*10^{-10}$. We call $HA$ and $A^-$ conjugate acid-base pairs. We can define acid-base pairs as acidic or basic. We note that in the above case, since $K_a > K_b$, this pair is acidic. 
+
+We can determine that $K_{b(NH_3)} > K_{a(NH_4^+)}$, so the pair are slightly basic. 
+
+\begin{example}
+Consider the reaction $$CH_3COO^- +H_2O \leftrightharpoons CH_3COOH + OH^-$$ Using $K_b = 5.6*10^{-10}$ and a concentration of $0.010 $ $M$ of $CH_3COO^-$, determine the $pH$ of the solution at equilibrium.
+\end{example}
+
+\begin{definition}
+\textbf{Salt solutions} are solutions of ionic solids that are assumed to dissociate fully when dissolved in $H_2O$ \end{definition}
+For instance, $CH_3COO^-$ has to be from a salt, such as $(Na)CH_3COO$ or $(NH_4)CH_3COO$. We have $$NaCH_3COO_{(aq)}  \rightarrow Na_{(aq)}^+ + CH_3COO_{(aq)}^-$$ $$NH_4CH_3COO_{(aq)}  \rightarrow NH_{4(aq)}^+  + CH_3COO_{(aq)}^-$$ In both of the above, the ion reacts with $H_2O$, so we get the following $$CH_3COO^- + H_2O \leftrightharpoons CH_3COOH + OH^-$$
+
+For the cations, we have 
+$$Na^+ + H_2O \leftrightharpoons NaOH + H^+$$
+$$NH_4^+ + H_2O \leftrightharpoons NH_3 + H_3O^+$$
+
+The first of the above two reactions is not likely to occur since the $NaOH$, a strong base, would dissociate. The salts above are therefore basic and neutral respectively. Thus, it is possible to get different $pH$ values depending on how the other ion interacts with water. It is therefore necessary to choose the other ion such that it does not react with water to change the $pH$. 
+
+\subsection{Buffers}
+
+We recall that conjugate acid-base pairs may be acidic or basic. For an acidic buffer, we would like a $K_a > K_b$, whereas the opposite is true if we would like a basic buffer.
+
+In neutral water, we have auto-ionization of water. In buffer solution, we have a reaction including the weak acid-base pair along with auto-ionization of water. When we add $NaOH$ to water, it turns basic. When we add $NaOH$ to the buffer solution, it converts the strong base to a weak base, thus preventing a change in $pH$. 
+
+
+\section{October 25, 3016}
+\subsection{Buffers}
+
+We can identify buffers qualitatively by examining what species and equilibria are present in water versus a buffer. We can examine how the pH of water versus a buffer changes when strong acid or base is added. The buffer resists a $pH$ change. We can also consider how strong acids and bases disturb a buffer's equilibria. 
+Consider the following equations 
+$$CH_3COOH_{(g)} + H_2O_{(l)} \leftrightharpoons CH_3COO_{(aq)}^- + H_3O_{(aq)}^+, K_a = 1.8*10^{-5}$$
+$$CH_3COO_{(aq)}^- + H_2O_{(l)}  \leftrightharpoons CH_3COOH_{(aq)} + OH^- , K_b = 5.6 * 10^{-10}$$
+
+The first equation tells us that the concentration of $[CH_3COOH] > [CH_3COO^-]$. However, we have an excess of $H_3O^+$. The second equation tells us that $[CH_3COO^-] > [CH_3COOH]$. However, we have an excess of $OH^-$. To prepare a buffer that resists a $pH$ change upon the addition of both strong acid or strong base, we need equal molar amounts of $HA$ and $A^-$. We choose to consider the first equation and relate $pH$ to $HA$ and $A^-$. That is, we have 
+$$K_a = \frac{\left[CH_3COO^-\right]\left[H_3O^+\right]}{[CH_3COOH]}$$
+From this, we can take the logarithm of both sides to get $$pH = pK_a + \log\left(\frac{conj. base}{conj. acid}\right)$$
+
+
+\begin{example}
+Calculate the $pH$ of a buffer after the addition of a strong acid or base. What is the $pH$ of a $0.010$ $M$ of $CH_3COOH/CH_3COO^-$ buffer after $1.2 * 10^{-4}$ $M$ $HCl$ has been added?
+\end{example}
+
+We note that the equation of the buffer is $$CH_3COOH_{(g)} + H_2O_{(l)} \leftrightharpoons CH_3COO_{(aq)}^- + H_3O_{(aq)}^+$$ The initial amount of acid is $1.2 * 10^{-4}$. Thus, this is $[H_3O^+]$ initial. We have $0.010M$ of both conjugate base and acid. Since there is acid added, our reaction proceeds in the reverse direction. We also note that our change $x$ is equal to the concentration of acid that is added. Therefore, we consider at equilibrium that our $pH$ is 
+\begin{align*}
+pH &= pK_a + \log\left(\frac{conj.base}{conj.acid}\right)\\
+&= 4.74 + \log\left(\frac{0.01 - 1.2*10^{-4}}{0.01 + 1.2*10^{-4}}\right)
+\end{align*}
+
+\begin{remark}
+We note that in the case that the conjugate acid/base pairs are both charged, then it is a salt solution. These may be buffer systems regardless, since they differ by a proton. 
+\end{remark}
+
+For different conjugate acid base pairs, we note that the differences in their $pH$ are due to different extents of equilibria ($K_a$), which in turn is due to the presence of a different $A^{2-}$. 
+%HCl + CH_3COO- + H2O -> Cl + CH3COOH + oh^-
+
+%1.2*10^-4	.01		.01		0      .01      .01
+%-x	-x		-x 		
+
+
+\section{October 27, 2016}
+\subsection{Buffer Ranges}
+
+
+
+
+The buffer range is the relative concentrations of conjugate acid and conjugate base. In the preparation of a buffer, we would want a conjugate base concentration that matches the conjugate acid concentration, so that the logarithm of the following is removed $$pH = pK_a + \log\left(\frac{conj. base}{conj. acid}\right)$$When we add a strong acid, the equation becomes $$pH = pK_a + \log\left(\frac{conj.base -\left[H^+\right]}{conj.acid + \left[H^+\right]}\right)$$ After the addition of a strong base, the equation becomes $$pH = pK_a + \log\left(\frac{conj.base  +\left[OH^-\right]}{conj.acid - \left[OH^-\right]}\right)$$
+
+\begin{remark}
+When referring to solubility, we want to determine how much of the initial solid is dissolved. This is the change, $x$, which we find in the ICE table, and is referred to as the molar solubility. Thus, the total change in concentration of the solid is the solubility of the solid. Usually, we can refer to solubility as measured in grams. 
+\end{remark}
+
+\begin{remark}
+The difference in $K_{sp}$ informs us of the relative difference in the change that happens when an ICE table is used, and the amounts of ions released into solution. That is, if we are informed about the change, then we are also informed of the amount of ions released. We note that $K_{sp}$ does not necessarily inform one of the appearance of the solid or the solution. 
+\end{remark}
+
+\begin{remark}
+We cannot use $K$ to determine relative solubility without determining $x$. 
+\end{remark}
+
+\begin{remark}
+In solubility, when it is saturated, it does not matter if we add more solid, since the concentration will not change. Temperature would alter $K$, and therefore the change. Similarly, by removing product, we can increase the solubility. 
+\end{remark}
+
+\begin{remark}
+If the $pH$ of each solution is decreased (more acidic), then the $H^+$ would react with proton acceptors. Thus, 
+\end{remark}
+
+\section{November 1, 2016}
+\subsection{Affecting Solubility}
+
+To produce more product, we can attempt to add more reactant (depends on saturation), remove product (always works) and change temperature (depends on enthalpy of reaction). 
+
+\begin{remark}
+At a low $pH$ or a high $[H^+]$, $Ag_2CrO_{4(s)}$ dissolved but $AgI_{(s)}$ and $AgCl_{(s)}$ did not. We note that this is because 
+\end{remark}
+
+\begin{example}
+Given the following reactions 
+$$Ag_2CrO_{4(s)} \leftrightharpoons 2Ag_{(aq)}^+ + CrO_{4(aq)}^{2-}, K_{sp} = 1.2*10^{-12}$$
+$$AgCl_{(s)} \leftrightharpoons Ag_{(aq)}^+ + Cl_{(aq)}^-, K_{sp}= 1.8*10^{-10}$$
+$$AgI_{(s)} \leftrightharpoons Ag_{(aq)}^+ + I_{(aq)}^-, K_{sp} = 8.3*10^{-17}$$
+what would happen at a high $pH$ or low $[H^+]$ given that 
+$$NH_{3(aq)} \leftrightharpoons NH_{4(aq)}^+ + OH_{(aq)}^-, K_{sp} = 1.8*10^{-5}$$
+$$Ag_{(aq)}^+ + 2NH_{3(aq)} \leftrightharpoons Ag(NH_3)_{2(aq)}^+, K_{sp} = 1.7*10^7$$
+\end{example}
+
+We note that the second equilibria has a larger constant $K$. That is, $Ag_{(aq)}^+$ is consumed. Therefore, in our reactions, we are removing products, so all solids will dissolve. Furthermore, we note that an increase in $pH$ is not responsible for the solubility of the salts, since it is the ions that are affecting the solubility. 
+
+
+
+\subsection{Experiment 3}
+We now revisit the reaction of $$2H_{2(g)} + O_{2(g)} \rightarrow 2H_2O_{(g)}$$ We recall that this reaction causes an explosion in the balloon. To make use of water in a hydrogen fuel cell, we need to convert $$2H_2O \rightarrow 2H_2 + O_2$$ Research into catalysts that allow the reaction to proceed faster and with greater yield are in place to make better use of this reaction for energy. We note that the redox reaction proceeds as two reactions to reach the final products
+$$2 H_2O_{(l)} \rightarrow O_{2(g)} + 4H^+ + 4e^-$$
+$$4H_2O_{(l)} + 4e^- \rightarrow 2H_{2(g)} + 4OH^-$$
+These reactions allow for the generation of energy that powers the hydrogen fuel cell.
+
+\subsection{Voltaic Cells}
+
+These cells involve spontaneous redox processes. Species oxidized have their $e^-$ released to be used to reduce another species. For instance, zinc can have electrons released $Zn_{(s)} \rightarrow Zn_{(aq)}^{2+} + 2e^-$ to be used to reduce copper $Cu_{(aq)}^{2+} + 2e^- \rightarrow Cu_{(s)}$. If these reactions occur in a single beaker, there is high energy change and heat. If we separate these processes into two beakers, we have equilibria. 
+
+If we are sending electrons through wire in one direction, we may use a salt bridge to send the ions in the other direction to establish a current. Note that by adding a circuit, we are disrupting the equilibria. The half cell potential is related to the charge build up at the electrodes. 
+
+\section{November 3, 2016}
+\subsection{Voltaic Cells Cont'd}
+
+Include electrodes, electrolytes, half cells. These are the voltaic cell components. Salt bridge must be made of neutral salt that does not change $pH$. To determine $E_{a(cell)}$, we need to refer to the potential of the half cells in the table that allows us to assign the anodes and cathodes. At the anode, oxidation takes place whereas at the cathode, reduction takes place. 
+Anything positive in reduction table is favourable for reduction. We use the Nernst equation to determine the cell potential at non standard. We note that $$I_{cell} = E_{cell} - \frac{0.0592}{n_e}\log(Q)$$
+
+
+\section{November 8, 2016}
+\subsection{Voltaic Cells Cont'd}
+
+\begin{example}
+For a cell based on the $Cu^{2+}/Cu$ and $Zn^{2+}/Zn$ ``couples", what would be the cell potential when the $\left[Zn^{2+}\right] = 1.2M$ and the $\left[Cu^{2+}\right] = 1.2*10^{-3}M$.
+\end{example}
+
+We note that the reaction becomes $$Cu^{2+} + Zn \rightarrow Cu^+ + Zn^{2+}$$ from the two half reactions that transfer 2 electrons. Applying the Nernst equation, $E_{cell} = E_{cell}^o - \frac{0.0592}{n_e}\log(Q)$, we get $$E_{cell} = E_{cell}^0-\frac{0.0592}{2 electrons}\log\left(\frac{\left[Zn^{2+}\right]}{\left[Cu^{2+}\right]}\right)$$
+
+\begin{example}
+given the electrode potentials below, determine the $E_{cell}^0$ for a voltaic cell made up of the redox ``couples" $Au^{3+}/Au$ and $MnO_4^-/Mn^{2+}$ 
+$$Au_{(aq)}^{3+} + 3e^- \leftrightharpoons Au_{(s)}, 1.42V$$
+$$8H_{(aq)}^+ +MnO_{4(aq)}^- + 5e^-\leftrightharpoons Mn_{(aq)}^{2+} + 4H_2O_{(l)}, 1.55V$$
+\end{example}
+
+We note that the cathode would be the higher $E^0$, and thus $E_{cell}^0 = E_{cathode} - E_{anode}$, which is therefore $1.55V - 1.42V = 0.13 V$.
+
+\begin{example}
+Determine the $K$ value for overall redox reaction above.
+\end{example}
+
+We apply the Nernst equation $$E^0= \frac{0.0592}{n_e}\log(K)$$ We need to balance the electrons from both sides, but we note we simply need to multiply the transfer of electrons between the two half reactions. That is, we have a transfer of 15 electrons. Thus solving for $K$ using $E_{cell}^0$, we get $$0.13V = \frac{0.0592}{15}\log(K)$$ which gives $$K = 8.7 * 10^{32}$$
+
+\begin{example}
+Determine what the value of $Q$ would be if the concentrations of species in the electrolytes of both half-cells were reduced to $0.010M$ rather than $1.00M$. Additionally, determine the direction in which the reaction is proceeding. 
+$$24H_{(aq)}^+ + 3MnO_{4(aq)}^- + 5Au_{(s)} \rightarrow 5Au_{(aq)}^{3+} + 3Mn_{(aq)}^{2+} + 12H_2O_{(l)}$$
+\end{example}
+
+We recall that $$Q = \frac{[products]^p}{[reactants]^r} = \frac{\left[Au^{3+}\right]^5\left[Mn^{2+}\right]^3}{\left[H^{+}\right]^{24}\left[MnO_4^-\right]^3} = \frac{0.01^50.01^3}{0.01^{24} 0.01^3} = 1.1*10^{38}$$
+We note that $Q  = 1.0*10^{38}$ and $K = 8.7*10^{32}$. That is, $Q > K$. Therefore, to reach equilibrium the reaction proceeds in the reverse direction. 
+
+\begin{example}
+Determine the cell potential of the above reaction. 
+\end{example}
+We apply the Nernst equation to get $$E_{cell} =0.13V - \frac{0.0592}{15}\log(1.0*10^{38}) = 0.13V-0.15V = -0.02V$$
+
+\begin{remark}The concentration is being changed once the reaction is run. If we choose to look at the reaction in the reverse direction, then a positive $0.02V$ would be obtained since this is the direction in which the reaction actually proceeds. The cell constructed is still spontaneous (a voltaic cell). Potentials of cells are always positive, so we should not be calculating a negative value. This tells us that we have written the reaction incorrectly. 
+\end{remark}
+
+\begin{example}
+Refer to the original reaction where $E_{cell}^0 = 0.13V$ and the reaction is given by $$24H_{(aq)}^+ + 3MnO_{4(aq)}^- + 5Au_{(s)} \rightarrow 5Au_{(aq)}^{3+} + 3Mn_{(aq)}^{2+} + 12H_2O_{(l)}$$
+Determine the diagram that would be associated with this reaction. 
+\end{example}
+The anions of $15e^-$ goes to the cathode from the anode through the wire. $KNO_3$ splits in the salt bridge where $NO_3^-$ proceeds towards the anode and the $K^+$ proceeds towards the cathode. We can use gold as the anode (where $Au$ is taken by the wire and $5Au^{3+}$ is released) but need to use an inert electrode such as $Pt$ as the electrode for the cathode (where $3MnO_4^-$ is taken by the wire and $3Mn^{2+}$ is released). Additionally, $12H_2O$ is released by the wire in the cathode and $24H^+$ is taken by the wire in the cathode. If we want to make this an electrolytic cell, then we need to add a power source that is greater than $0.13 V$.
+
+Voltaic/Galvanic cell reactions proceed because of the natural difference in potential. Oxidation always occurs at the anode (resulting in electrons), while reduction occurs at the cathode (using electrons). When we apply a power source that opposes this that is greater than the potential, this allows for flow in the reverse direction in an Electrolytic cell. 
+
+
+\section{November 15, 2016}
+\subsection{Electrolytic Cells}
+
+\begin{remark}We note that the reaction with higher potential will likely proceed as stated, while the other reaction proceeds in the opposite direction. 
+\end{remark}
+
+We can manipulate the concentrations of the reactants in an attempt to reverse the direction of the reaction. Thus, a battery has to be used for it to be an electrolytic cell. Cell potential can only be related to reaction quotient, and relates that the reaction is proceeding in a direction. The reaction constant relates to equilibrium
+when $E_{cell}=0$, as can be seen in the formulas. From the formula, we note that $E_{cell}$ is dependent on temperature. Furthermore, by rearranging the reaction, we can determine the energy that we can obtain from a reaction given a potential. $$n_eFE_{cell}^0 = RT\ln(k)$$
+
+\begin{example}
+Determine what change there will be in the standard electrode potential related to the equation $$AgBr_{(s)} + e^- \leftarrow  Ag_{(s)} + Br^-_{(aq)}$$ with an increase in temperature.
+\end{example}
+
+We note that this is a half reaction with a potential build up. Therefore, we note that depending on whether $K$ is large or small, the $\log$ term becomes positive or negative accordingly. Therefore, we cannot determine the effect of temperature as we do not know whether it would increase or decrease the standard cell potential. 
+
+
+A \textbf{battery} is a galvanic cell whose circuit is not formed until it is placed in a machine that it will run. For instance, standard alkaline batteries are $1.5V$ cells. $9V$ batteries are a series of $6*1.5V$ cells or a series of simple alkaline batteries. We note that batteries may or may not become electrolytic. 
+
+\begin{enumerate}
+	\item Primary batteries are non-rechargeable and thus the reaction cannot be reversed. This is because products are either lost or clog the electrodes. 
+	\item Secondary batteries are rechargeable or can become electrolytic when an energy source is used on it. Commonly, these include lithium-ion batteries. 
+	\item Fuel cells are a third classification of batteries. They are galvanic cells that become electrolytic cells when charging. We note that fuel cells are not contained. Stored energy is once again stored in the bonds of the fuel. 
+\end{enumerate}
+
+Qualitatively, batteries use redox reactions to 
+
+\section{November 24, 2016}
+\subsection{Atomic Bond Cont'd}
+
+Recall that an atom consists of a nucleus of protons and neutrons surrounded by an electron cloud. Electrons have 3 dimensional wave characteristics. Mathematical manipulation of any electron's wave function $\psi$ defines the shape (orbital) for the electron cloud. This depends on the energy of the electron, with larger clouds possessing more energy. 
+
+The shapes and probability plots in 3-dimensions 
+To find the electron in the cloud, we "slice the cloud open" and note that the electrons are not dispersed uniformly within the cloud. We make probability plots, where the vertical axis represents the probability of finding $e^-$ and the horizontal axis represents the distance from the nucleus. The highest point in the graph indicates the position where an electron most probably resides. 
+
+\begin{remark}
+We utilize the relation $4 \pi e^2 \psi^2$ to graphically visualize the distribution of electrons within the cloud. 
+\end{remark}
+
+\begin{remark}
+Shells are represented by the number, relate to energy and the relative size ($1s$, $2s$, and $3s$ for instance). Sub-shells ($2s$ and $2d$ for instance) indicate that $e^-$ have similar energies, but travel in a different shape in 3D space. We additionally have a different number of dashed lines within each sub-shell. This indicates the number of electrons possible per orbital. 
+\end{remark}
+
+\begin{definition}
+The term \textbf{degenerate} is used to indicate that the energy between two sub-shells is equal. For instance, $2s$ is degenerate with $2p$ for hydrogen (They reside at the same energy). $1s$ is not degenerate with $2p$, since they are at different energies.
+\end{definition}
+
+\begin{remark}
+For non-hydrogen atoms, the same orbitals (sub-shells, shells) exist but degeneracy is lost between sub-shells. 
+\end{remark}
+
+We can determine the electron configuration (full and condensed) by comparing with a periodic table indicating the orbital filling. The orbital diagram for the electron configuration is shown as arrows within boxes of each sub-shell. The total number of arrows within all the boxes is equal to the atomic number of the element. Note that the orbital diagram is simply a horizontal rearrangement of the energy diagram. The energy diagram does however, indicate the absolute relative energies. When drawing the shape of the atomic orbital, we simply draw the combination of shapes from the valence electrons. 
+
+\begin{definition}
+\textbf{Core electrons} are the electrons in the lowest energy level, closest to the nucleus. \textbf{Valence electrons} are the outermost electrons with the highest energy. This means that they are the most unstable and most reactive electrons. 
+\end{definition}
+
+
+
+
+\begin{remark}
+There is no spatial awareness in a Lewis dot structure. 
+\end{remark}
+
+
+
+
+
+
+
+\section{Paragraph}
+In \LaTeX, paragraphs are caused
+when two line breaks are used.
+Single line breaks are ignored.
+Hence this entire block is one paragraph.
+
+Now this is a new paragraph. If you want to
+start a new line without a new paragraph, use
+two backslashes like this:
+\\
+Now the next words will be on a new line.
+\textbf{As a general rule, use this as infrequently as possible.}
+
+You can \textbf{bold} or \textit{italicize} text.
+Try to not do so repeatedly for mechanical tasks by, e.g. using theorem environments (see Section \ref{sec:theorem}).
+
+
+\section{Math}
+Inline math is created with dollar signs,
+like $e^{i \pi} = -1$ or $\half \cdot 2 = 1$.
+
+Display math is created as follows:
+\[ \sum_{k=1}^n k^3 = \left( \sum_{k=1}^n k \right)^2. \]
+This puts the math on a new line. Remember to properly add punctuation to the end of your sentences -- display math is considered part of the sentence too!
+
+Note that the use of \verb \left(  causes the parentheses to be the correct size. Without them, get something ugly like
+\[ \sum_{k=1}^n k^3 = ( \sum_{k=1}^n k )^2. \]
+
+\subsection{Using alignment}
+Try this:
+\begin{align*}
+	\prod_{k=1}^4 \left( i-x_k \right)\left( i+x_k \right) &= P(i) \cdot P(-i) \\
+	&= \left( 1-b+d+i(c-a) \right)\left( 1-b+d-i(c-a) \right) \\
+	&= (a-c)^2 + \left( b-d-1 \right)^2. 
+\end{align*}
+
+\section{Shortcuts}
+In the beginning of the document we wrote
+\begin{verbatim}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\cbrt}[1]{\sqrt[3]{#1}}
+\end{verbatim}
+Now we can use these shortcuts.
+\[ \half + \half = 1 \text{ and } \cbrt{8} = 2. \]
+
+\section{Theorems and Proofs}
+\label{sec:theorem}
+% ^ Now we can refer to this
+Let us use the theorem environments we had in the beginning.
+\begin{definition}
+	Let $\mathbb R$ denote the set of real numbers.
+\end{definition}
+Notice how this makes the source code READABLE.
+
+\begin{theorem}
+	[Vasc's Inequality]
+	\label{thm:vasc}
+	For any $a$, $b$, $c$ we have the inequality
+	\[ \left( a^2+b^2+c^2 \right)^2 \ge 3\left( a^3b+b^3c+c^3a \right). \]
+\end{theorem}
+
+For the proof of Theorem \ref{thm:vasc}, we need the following lemma.
+
+\begin{lemma}
+	We have $\left( x+y+z \right)^2 \ge 3(xy+yz+zx)$ for any $x,y,z \in \mathbb R$.
+\end{lemma}
+\begin{proof}
+	This can be rewritten as
+	\[ \half\left( (x-y)^2+(y-z)^2+(z-x)^2 \right) \ge 0 \]
+	which is obvious.
+\end{proof}
+
+\begin{proof}
+	[Proof of Theorem \ref{thm:vasc}]
+	In the lemma, put $x=a^2-ab+bc$, $y=b^2-bc+ca$, $z=c^2-ca+ab$.
+\end{proof}
+
+\begin{remark}
+	In \autoref{thm:vasc}, equality holds if $a : b : c = \cos^2 \frac{2\pi}{7} : \cos^2 \frac{4\pi}{7} : \cos^2 \frac{6\pi}{7}$.
+	This unusual equality case makes the theorem difficult to prove.
+\end{remark}
+
+
+\section{Referencing}
+The above examples are the simplest cases.
+You can get much fancier: check out
+\href{http://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing}{the Wikibooks}.
+
+\section{Numbered and Bulleted Lists}
+Here is a numbered list.
+\begin{enumerate}
+	\item The environment name is ``enumerate''.
+	\item You can nest enumerates.
+		\begin{enumerate}
+			\item Subitem
+			\item Another subitem
+		\end{enumerate}
+	\item[$2 \half$.] You can also customize any particular label.
+	\item But the labels continue onwards afterwards.
+\end{enumerate}
+
+\bigskip
+
+You can also create a bulleted list.
+\begin{itemize}
+	\item The syntax is the same as ``enumerate''.
+	\item However, we use ``itemize'' instead.
+\end{itemize}
+
+
+\end{document}
